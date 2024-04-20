@@ -1,12 +1,26 @@
 # nRFConnectSDK BLE Fundamentals
 Nordic Semiconductor has deprecated the old nRF5 SDK and now all the new features are developed for their new SDK called nRF Connect which is based on [Zephyr RTOS](https://github.com/zephyrproject-rtos/zephyr): an open-source real-time operating system for connected and resource-constrained embedded devices. This repository is for my hands-on during the Bluetooth LE Fundamentals course, which can be found [here](https://academy.nordicsemi.com/courses/bluetooth-low-energy-fundamentals).
 
+
 ## SDK version and hardware used during the course 
 - [nRF Connect SDK v2.5.0](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/index.html)
 - [nRF52840 DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk) (64MHz ARM Cortex-M4F based SoC)
 
+
 During lesson 6, I used extra hardware to run the nRF Sniffer application to detect and analyze Bluetooth LE packets:
 - [nRF52840 Dongle](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dongle) (64MHz ARM Cortex-M4F based SoC)
+
+NOTE: [Wireshark](https://www.wireshark.org/) desktop application was also used during lesson 6 to detect and explore BLE packets.
+
+## Bluetooth LE Controller used during the course
+
+As the image below illustrates, the Bluetooth LE (BLE) stack can be divided into two main components: the BLE Host and the BLE Controller. Regarding the BLE controller, the nRF Connect SDK contains [two implementations](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/protocols/bt/ble/index.html#zephyr-bluetooth-le-controller) of BLE controller:
+-  SoftDevice Controller
+-  Zephyr BLE Controller
+
+This means users can use the open-source [Zephyr BLE controller](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/connectivity/bluetooth/overview.html#bluetooth-overview) implementation, which is vendor independent. This course use the [SoftDevice Controller](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrfxlib/softdevice_controller/README.html#softdevice-controller) developed by Nordic itself, as it was designed specifically for the nRF52, nRF53 and nRF54 SoCs.
+
+<img src="img/ble_stack.png" width=250>
 
 ## Build and flash Instructions
 You must use the nRF Connect for VS Code extension or use the west tool, which is part of the Zephyr RTOS build system:
@@ -38,3 +52,4 @@ You must use the nRF Connect for VS Code extension or use the west tool, which i
 - [nRF Connect SDK Documentation](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 - [Zephyr RTOS Documentation](https://docs.zephyrproject.org/latest/)
 - [Build and Flash an application on the command line](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/programming.html)
+- Soft
