@@ -26,6 +26,7 @@ static const struct bt_data ad[] = {
 static unsigned char url_data[] = {0x17, '/', '/', 'a', 'c', 'a', 'd', 'e', 'm', 'y', '.',
                                    'n', 'o', 'r', 'd', 'i', 'c', 's', 'e', 'm', 'i', '.',
                                    'c', 'o', 'm'};
+
 /* Declare the scan response packet */
 static const struct bt_data sd[] = {
     BT_DATA(BT_DATA_URI, url_data, sizeof(url_data))};
@@ -43,6 +44,7 @@ void main(void)
                 LOG_ERR("LEDs init failed (err %d)\n", err);
                 return;
         }
+
         // Enable the Bluetooth LE stack
         err = bt_enable(NULL);
         if (err)
@@ -51,6 +53,7 @@ void main(void)
                 return;
         }
         LOG_INF("Bluetooth initialized\n");
+
         // Start advertising
         err = bt_le_adv_start(BT_LE_ADV_NCONN, ad, ARRAY_SIZE(ad),
                               sd, ARRAY_SIZE(sd));

@@ -52,4 +52,3 @@ You must use the nRF Connect for VS Code extension or use the west tool, which i
 - [nRF Connect SDK Documentation](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html)
 - [Zephyr RTOS Documentation](https://docs.zephyrproject.org/latest/)
 - [Build and Flash an application on the command line](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/programming.html)
-
